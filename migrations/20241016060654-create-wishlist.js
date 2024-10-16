@@ -7,7 +7,9 @@ module.exports = {
 
       id:{ 
       allowNull:false,
-      type:DataTypes.UUID
+      type:DataTypes.UUID,
+      defaultValue:DataTypes.UUIDV4,
+      primaryKey:true
     },
    product_id:{ 
       allowNull:false,
