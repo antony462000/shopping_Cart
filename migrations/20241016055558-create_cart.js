@@ -3,7 +3,7 @@ const {DataTypes} = require("sequelize")
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-  return await queryInterface.createTable("carts",{
+  return await queryInterface.createTable("Carts",{
     id:{
             allowNull:false,
             type:DataTypes.UUID,
@@ -15,16 +15,30 @@ module.exports = {
             type:DataTypes.UUID
         },
         quantity:{
-            type:DataTypes.INTEGER
+            type:DataTypes.DOUBLE
         },
         user_id:{
             allowNull:false,
             type:DataTypes.UUID
-        }
+        },
+    createdAt: {
+      allowNull: false,
+      type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW
+    },
+    updatedAt: {
+      allowNull: false,
+      type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW
+    },
+    deletedAt: {
+      allowNull: true,
+      type: DataTypes.DATE
+    }
   })
   },
 
   async down (queryInterface, Sequelize) {
-    return await queryInterface.dropTable("carts")
+    return await queryInterface.dropTable("Carts")
   }
 };

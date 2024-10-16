@@ -16,7 +16,7 @@ module.exports = {
         },
         price:{
             allowNull:false,
-            type:DataTypes.INTEGER
+            type: DataTypes.DOUBLE
         },
         Details:{
             allowNull:false,
@@ -24,7 +24,7 @@ module.exports = {
         },
         quantity:{
             allowNull:false,
-            type:DataTypes.INTEGER
+            type: DataTypes.DOUBLE
         },
         isOfferProduct:{
             allowNull:false,
@@ -37,7 +37,21 @@ module.exports = {
         isActive:{
             allowNull:false,
             type:DataTypes.BOOLEAN
-        }
+        },
+       createdAt: {
+           allowNull: false,
+           type: DataTypes.DATE,
+           defaultValue: DataTypes.NOW
+       },
+       updatedAt: {
+           allowNull: false,
+           type: DataTypes.DATE,
+           defaultValue: DataTypes.NOW
+       },
+       deletedAt: {
+           allowNull: true,
+           type: DataTypes.DATE
+       }
     }
    )
   },

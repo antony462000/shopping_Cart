@@ -19,7 +19,7 @@ module.exports = (sequelize,DataTypes)=>{
             type:DataTypes.UUID
         },
         quantity:{
-            type:DataTypes.INTEGER
+            type:DataTypes.DOUBLE
         },
         user_id:{
             allowNull:false,
@@ -29,7 +29,7 @@ module.exports = (sequelize,DataTypes)=>{
 {
     sequelize,
     modelName:"Cart",
-    tableName:"carts",
+    tableName:"Carts",
     timestamps:true,
     paranoid:true
 })

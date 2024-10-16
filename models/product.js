@@ -20,7 +20,7 @@ module.exports = (sequelize,DataTypes) =>{
         },
         price:{
             allowNull:false,
-            type:DataTypes.INEGER
+            type:DataTypes.DOUBLE
         },
         Details:{
             allowNull:false,
@@ -28,7 +28,7 @@ module.exports = (sequelize,DataTypes) =>{
         },
         quantity:{
             allowNull:false,
-            type:DataTypes.INEGER
+            type: DataTypes.DOUBLE
         },
         isOfferProduct:{
             allowNull:false,
