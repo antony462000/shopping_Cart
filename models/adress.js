@@ -10,7 +10,7 @@ module.exports =  (Sequelize,DataTypes) =>{
     Address.init({
         id:{
             allowNull:true,
-            typee:DataTypes.UUID,
+            type:DataTypes.UUID,
             defaultValue:DataTypes.UUIDV4,
             primaryKey:true
         },
