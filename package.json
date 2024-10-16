@@ -12,7 +12,9 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "migration:run":"npx sequelize-cli db:migrate",
+    "migration:revert":"npx sequelize-cli db:migrate:undo:all"
   },
   "author": "Antony",
   "license": "ISC"

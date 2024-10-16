@@ -7,36 +7,26 @@ module.exports=(sequelize,DataTypes)=>{
     }
     Order.init({
         id: {
-            allowNull: false,
+            allowNull: true,
             type: DataTypes.UUID,
-            primaryKey:true
+            defaultValue: DataTypes.UUIDV4,
+            primaryKey: true
         },
-        product_id: {
+        productId: {
             type: DataTypes.UUID
         },
-        user_id: {
-            type: DataTypes.UUID
-        },
-        address_id: {
-            type: DataTypes.UUID
-        },
-        payment_id: {
-            type: DataTypes.UUID
-        },
-        paymentMethod: {
+        offerType: {
             type: DataTypes.STRING
         },
-        amount: {
+        value: {
             type: DataTypes.DOUBLE
         },
-        status: {
-            type: DataTypes.BOOLEAN
+        isExpired: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
         },
-        deliveryStatus: {
-            type: DataTypes.BOOLEAN
-        },
-        paymentStatus: {
-            type: DataTypes.BOOLEAN
+        validity: {
+            type: DataTypes.DATE
         },
     },{
         sequelize,

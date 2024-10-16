@@ -11,14 +11,15 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.UUID,
             primaryKey: true
         },
-        order_id: {
+        orderId: {
             type: DataTypes.UUID
         },
-        user_id: {
+        userId: {
             type: DataTypes.UUID
         },
         status: {
-            type: DataTypes.BOOLEAN
+            type: DataTypes.STRING,
+            defaultValue: "PENDING"
         },
     }, {
         sequelize,

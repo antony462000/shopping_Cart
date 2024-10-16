@@ -23,13 +23,13 @@ module.exports = (Sequelize, DataTypes) => {
         value: {
             type: DataTypes.DOUBLE
         },
-        isExpire: {
-            type: DataTypes.BOOLEAN
+        isExpired: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
         },
         validity: {
             type: DataTypes.DATE
         },
-
     },
         {
             sequelize,

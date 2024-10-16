@@ -3,27 +3,21 @@ const { DataTypes } = require("sequelize")
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    return await queryInterface.createTable('Offers', {
+    return await queryInterface.createTable('wishlists', {
+
       id: {
-        allowNull: true,
+        allowNull: false,
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,
         primaryKey: true
       },
-      product_id: {
+      productId: {
+        allowNull: false,
         type: DataTypes.UUID
       },
-      offerType: {
-        type: DataTypes.STRING
-      },
-      value: {
-        type: DataTypes.DOUBLE
-      },
-      isExpire: {
-        type: DataTypes.BOOLEAN
-      },
-      validity: {
-        type: DataTypes.DATE
+      userId: {
+        allowNull: false,
+        type: DataTypes.UUID
       },
       createdAt: {
         allowNull: false,
@@ -39,11 +33,9 @@ module.exports = {
         allowNull: true,
         type: DataTypes.DATE
       }
-    })
+    });
   },
-
   async down(queryInterface, Sequelize) {
-    return await queryInterface.dropTable('Offers')
+    return await queryInterface.dropTable('wishlists');
   }
 };
-
