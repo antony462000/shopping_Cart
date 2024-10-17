@@ -29,5 +29,5 @@ module.exports = (sequelize, DataTypes) => {
         paranoid: true,
         deletedAt: "deletedAt"
     })
-    return Order;
+    return Payment;
 }

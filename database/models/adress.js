@@ -1,7 +1,7 @@
 `use strict`;
 const {Model, Sequelize, DataTypes}= require("sequelize")
 
-module.exports =  (Sequelize,DataTypes) =>{
+module.exports =  (sequelize,DataTypes) =>{
     class Address extends Model{
         static associate (models){
             
@@ -34,4 +34,5 @@ module.exports =  (Sequelize,DataTypes) =>{
     paranoid:true
 }
 )
+    return Address
 }

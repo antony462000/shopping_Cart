@@ -1,10 +1,10 @@
 'use strict'
-const {Model}= require("sequelize")
+const { Model, UUIDV4 } = require("sequelize")
 
-module.exports = (sequelize,DataTypes) =>{
-    class User extends Model{
-        static associate (models){
-            
+module.exports = (sequelize, DataTypes) => {
+    class User extends Model {
+        static associate(models) {
+
         }
 
     }
@@ -12,7 +12,8 @@ module.exports = (sequelize,DataTypes) =>{
         id: {
             allowNull: false,
             type: DataTypes.UUID,
-            primaryKey: true
+            primaryKey: true,
+            defaultValue: UUIDV4
         },
         name: {
             type: DataTypes.STRING,
@@ -32,11 +33,12 @@ module.exports = (sequelize,DataTypes) =>{
             defaultValue: "USER"
         },
     },
-{sequelize,
-    modelName:"User",
-    tableName:"users",
-    timestamps:true,
-    paranoid:true
-})
-return User
+        {
+            sequelize,
+            modelName: "User",
+            tableName: "users",
+            timestamps: true,
+            paranoid: true
+        })
+    return User
 }

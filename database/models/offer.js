@@ -1,7 +1,7 @@
 `use strict`;
-const { Model, Sequelize, DataTypes } = require("sequelize")
+const { Model } = require("sequelize")
 
-module.exports = (Sequelize, DataTypes) => {
+module.exports = (sequelize, DataTypes) => {
     class Offer extends Model {
         static associate(models) {
 
@@ -39,4 +39,5 @@ module.exports = (Sequelize, DataTypes) => {
             paranoid: true
         }
     )
+    return Offer
 }
