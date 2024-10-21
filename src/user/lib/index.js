@@ -1,7 +1,6 @@
-const createUser = require("./user.create")
-const findUserByKey = require('./user.find.by.key')
+const createUser = require("./user.create");
+const findUserByKey = require("./user.find.by.key");
 exports = {
-    createUser,
-    findUserByKey: findUserByKey
+  createUser,
+  findUserByKey: findUserByKey,
 };
-
