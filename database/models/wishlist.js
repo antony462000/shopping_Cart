@@ -3,7 +3,14 @@ const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class Wishlist extends Model {
     static associate(models) {
-      // define association here
+      Wishlist.belongsTo(models.Product, {
+        foreignKey: "productId",
+        as: "product",
+      });
+      Wishlist.belongsTo(models.User, {
+        foreignKey: "userId",
+        as: "user",
+      });
     }
   }
   Wishlist.init(
@@ -26,7 +33,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: "Wishlist",
-      tableName: "Wishlists",
+      tableName: "wishlists",
       timestamps: true,
       paranoid: true,
       deletedAt: "deletedAt",

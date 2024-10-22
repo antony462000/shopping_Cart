@@ -3,7 +3,13 @@ const { Model, UUIDV4 } = require("sequelize");
 
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
-    static associate(models) {}
+    static associate(models) {
+      User.belongsTo(models.Wishlist, {
+        foreignKey: "id",
+        targetKey: "userId",
+        as: "wishlist",
+      });
+    }
   }
   User.init(
     {

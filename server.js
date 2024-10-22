@@ -9,5 +9,8 @@ app.listen(port, (error) => {
 });
 
 const userRouter = require("./src/user/router");
+const wishlistRouter = require("./src/wishlist/router");
 
 app.use("/user", userRouter);
+
+app.use("/wishlist", wishlistRouter);
