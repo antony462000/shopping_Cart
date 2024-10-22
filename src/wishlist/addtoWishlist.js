@@ -2,6 +2,7 @@ const Responder = require("../shared/responder");
 const wishlistadd = require("./lib/wishlist.add");
 
 module.exports = async (req, res) => {
+  console.log("+++++++++++");
   console.log(req.body);
   const responder = new Responder(res);
   try {
